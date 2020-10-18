@@ -9,8 +9,15 @@ layout: default
             <p class="post-description">{{ page.description }}</p>
           </header>
 
-          <article>
-            {{ content }}
-          </article>
+  <article>
+    {{ content }}
+
+    {% if page.social %}
+    <div class="social">
+      {% include social.html %}
+      <div class="contact-note">{{ site.contact_note }}</div>
+    </div>
+    {% endif %}
+  </article>
 
         </div>

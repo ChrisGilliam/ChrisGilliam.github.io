@@ -1,8 +1,9 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: Research
+permalink: /research/
+description: Current and past research projects
+social: true  # includes social icons at the bottom of the page
 nav: true
 display_categories: [work, fun]
 horizontal: false
