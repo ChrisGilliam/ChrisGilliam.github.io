@@ -17,6 +17,7 @@ group :jekyll_plugins do
     gem 'webrick'
     gem 'htmlcompressor'
     gem 'htmlbeautifier'
+    gem 'kramdown-parser-gfm'
 end
 group :other_plugins do
     gem 'httparty'

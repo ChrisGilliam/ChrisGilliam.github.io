@@ -1,56 +1,62 @@
 ---
 ---
 <!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 abbr">
-        {%- if entry.abbr -%}
-          {%- if site.data.venues[entry.abbr] -%}
-          <abbr class="badge"><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>
-          {%- else -%}
-          <abbr class="badge">{{entry.abbr}}</abbr>
-          {%- endif -%}
-        {%- endif -%}
-        </div>
-
 <div class="row">
-
-  <div id="{{entry.key}}" class="col-sm-12">
+  <div id="{{entry.key}}" class="col-sm-1">
+  </div>
+  <div id="{{entry.key}}" class="col-sm-9">
     {% if entry.type == "thesis" %}
       {{reference}}
     {% else %}
       <div class="title">{{entry.title}}</div>
       <div class="author">
-        {% for author in entry.author_array %}
-          {% if forloop.length == 1 %}
-            {% if author.last == site.scholar.last_name %}
-              <b>{{author.first}} {{author.last}} </b>
-            {% else %}
-              {{author.first}} {{author.last}}
-            {% endif %}
-          {% else %}
-            {% unless forloop.last %}
-              {% if author.last == site.scholar.last_name %}
-                <b>{{author.first}} {{author.last}}</b>,
-              {% else %}
-                {% if site.data.coauthors[author.last] %}
-                  <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first}}</a>,
-                {% else %}
-                  {{author.first}} {{author.last}},
-                {% endif %}
-              {% endif %}
-            {% else %}
-              {% if author.last == site.scholar.last_name %}
-                and <b>{{author.first}} {{author.last}}</b>
-              {% else %}
-                {% if site.data.coauthors[author.last] %}
-                  and <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first}}</a>
-                {% else %}
-                  and {{author.first}} {{author.last}}
-                {% endif %}
-              {% endif %}
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
+        {%- for author in entry.author_array -%}
+            {%- assign author_is_self = false -%}
+            {%- if author.last == site.scholar.last_name%}
+              {%- if site.scholar.first_name contains author.first -%}
+                {%- assign author_is_self = true -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- assign coauthor_url = nil -%}
+            {%- if site.data.coauthors[author.last] -%}
+              {%- for coauthor in site.data.coauthors[author.last] -%}
+                {%- if coauthor.firstname contains author.first -%}
+                  {%- assign coauthor_url = coauthor.url -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+
+            {%- if forloop.length == 1 -%}
+              {%- if author_is_self %}
+                <b>{{author.first}} {{author.last}}</b>
+              {%- else -%}
+                {{author.first}} {{author.last}}
+              {%- endif -%}
+            {%- else -%}
+              {%- unless forloop.last -%}
+                {% if author_is_self %}
+                  <b>{{author.first}} {{author.last}}</b>,&nbsp;
+                {%- else -%}
+                  {% if coauthor_url -%}
+                    <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>,&nbsp;
+                  {%- else -%}
+                    {{author.first}} {{author.last}},&nbsp;
+                  {%- endif -%}
+                {%- endif -%}
+              {%- else -%}
+                {% if author_is_self -%}
+                  and <b>{{author.first}} {{author.last}}</b>
+                {% else -%}
+                  {%- if coauthor_url -%}
+                    and <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
+                  {% else -%}
+                    and {{author.first}} {{author.last}}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endunless -%}
+            {%- endif -%}
+          {%- endfor %}
       </div>
 
       <div class="periodical">
@@ -110,7 +116,10 @@
       <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Blog</a>
     {% endif %}
     {% if entry.code %}
-      <a href="https://github.com/ChrisGilliam/{{entry.code}}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+      <a href="{{entry.code}}" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+    {% endif %}
+    {% if entry.video %}
+      <a href="{{entry.video}}" class="btn btn-sm z-depth-0" role="button" target="_blank">Video</a>
     {% endif %}
     {% if entry.poster %}
       {% if entry.poster contains '://' %}
@@ -136,6 +145,19 @@
     <div class="abstract hidden">
       <p>{{ entry.abstract }}</p>
     </div>
+    {% endif %}
+  </div>
+
+  <div class="col-sm-1 abbr">
+    {%- if entry.abbr -%}
+      {%- if site.data.venues[entry.abbr] -%}
+      <abbr class="badge"><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr>
+      {%- else -%}
+      <abbr class="badge">{{entry.abbr}}</abbr>
+      {%- endif -%}
+    {%- endif -%}
+    {% if entry.award %}
+      <span class="award badge">:sparkles:{{entry.award}}:sparkles:</span>
     {% endif %}
   </div>
 </div>

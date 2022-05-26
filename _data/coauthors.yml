@@ -1,18 +1,23 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"Blu":
+  - firstname: ["Thierry", "T."]
+    url: https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/
 
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Jelfs":
+  - firstname: ["Beth", "B."]
+    url: https://beteje.github.io/
 
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Dragotti":
+  - firstname: ["Pier Luigi", "P.L.", "P. L."]
+    url: https://www.commsp.ee.ic.ac.uk/~pld/
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Küstner":
+  - firstname: ["Thomas", "T."]
+    url: http://www.midaslab.org/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Ghorbani":
+  - firstname: ["Kamran", "K."]
+    url: http://rfant.org.au/
+
+"Li":
+  - firstname: ["Jizhou", "J."]
+    url: http://lijz.io/

@@ -241,12 +241,12 @@ blockquote {
     font-size: 4rem;
     a {
       i::before {
-        color: var(--global-text-color);
+        color: var(--global-theme-color);
         transition-property: all 0.2s ease-in-out;
       }
       &:hover {
         i::before {
-          color: var(--global-theme-color);
+          color: var(--global-hover-color);
         }
       }
     }
@@ -255,7 +255,6 @@ blockquote {
     font-size: 0.8rem;
   }
 }
-
 
 // Footer
 footer.fixed-bottom {
@@ -354,18 +353,6 @@ footer.sticky-bottom {
   }
 }
 
-// social
-
-.social {
-  i {
-    color: var(--global-theme-color);
-    &:hover {
-      color: var(--global-hover-color);
-    }
-  }
-}
-
-
 // Projects
 
 .projects {
@@ -429,8 +416,8 @@ footer.sticky-bottom {
     }
   }
   h2.year {
-    color: $light-cyan-color;
-    border-top: 1px solid $grey-light;
+    color: var(--global-hover-color);
+    border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
     margin-bottom: -2rem;
@@ -442,7 +429,27 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin: 1rem 2rem;
+      margin-bottom: 1rem;
+      .abbr {
+        height: 2rem;
+        margin-bottom: 0.5rem;
+        abbr {
+          display: inline-block;
+          background-color: var(--global-theme-color);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          a {
+            color: white;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+        .award {
+          color: var(--global-theme-color) !important;
+          border: 1px solid var(--global-theme-color);
+        }
+      }
       .title {
         font-weight: bolder;
       }
