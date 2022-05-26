@@ -455,15 +455,17 @@ footer.sticky-bottom {
       }
       .author {
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
+          border-bottom: 1px dashed;
+          color: var(--global-text-color);
           &:hover {
-              border-bottom-style: solid;
+              border-bottom-style: solid var(--global-theme-color);
               text-decoration: none;
+              color: var(--global-theme-color);
           }
         }
         > em {
-          border-bottom: 1px solid;
           font-style: normal;
+          color: var(--global-theme-color);
         }
       }
       .links {
