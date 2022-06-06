@@ -17,7 +17,7 @@
 }
 
 @article{Li2022,
-  title     ={Gravity aided navigation using Viterbi map matching algorithm},
+  title     = {Gravity Aided Navigation using Viterbi Map Matching Algorithm},
   author    = {Li, W. and Gilliam, C. and Wang, X. and Kealy, A. and Greentree, A. and Moran, B.},
   journal   = {Journal of Navigation},
   arxiv     = {arXiv:2204.10492},
@@ -209,8 +209,8 @@
   abstract  = {Image registration is a required step in many practical applications that involve the acquisition of multiple related images. In this paper, we propose a methodology to deal with both the geometric and intensity transformations in the image registration problem. The main idea is to modify an accurate and fast elastic registration algorithm (Local All-Pass - LAP) so that it returns a parametric displacement field, and to estimate the intensity changes by fitting another parametric expression. Although we demonstrate the methodology using a low-order parametric model, our approach is highly flexible and easily allows substantially richer parametrisations, while requiring only limited extra computation cost. In addition, we propose two novel quantitative criteria to evaluate the accuracy of the alignment of two images ('salience correlation') and the number of degrees of freedom ('parsimony') of a displacement field, respectively. Experimental results on both synthetic and real images demonstrate the high accuracy and computational efficiency of our methodology. Furthermore,  we demonstrate that the resulting displacement fields are more parsimonious than the ones obtained in other state-of-the-art image registration approaches.},
   doi       = {10.1109/tip.2020.2984897},
   publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
-  pdf 	 = {TIP2020.pdf},
-  selected  = {true},
+  pdf 	    = {TIP2020.pdf},
+  supp      = {TIP2020_supplementary.pdf},
 }
 
 @InProceedings{Gilliam2019,
@@ -237,7 +237,7 @@
   pages     = {4195--4199},
   abstract  = {High-quality video frame interpolation often necessitates accurate motion estimation, which can be obtained using modern optical flow methods. In this paper, we use the recently proposed Local All-Pass (LAP) algorithm to compute the optical flow between two consecutive frames. The resulting flow field is used to perform interpolation using cubic splines. We compare the interpolation results against a well-known optical flow estimation algorithm as well as against a recent con-volutional neural network scheme for video frame interpolation. Qualitative and quantitative results show that the LAP algorithm performs fast, high-quality video frame interpolation, and perceptually outperforms the neural network and the Lucas-Kanade method on a variety of test sequences.},
   doi       = {10.1109/ICIP.2019.8803484},
-  pdf 	    = {ICIP2019b.pdf},
+  pdf 	    = {ICIP2019a.pdf},
 }
 
 @InProceedings{Jelfs2019,
@@ -250,8 +250,8 @@
   address   = {Lanzhou, China},
   abstract  = {Delay estimation is a common problem in signal processing which becomes particularly challenging when the delay is time-varying and the recorded signals are non-stationary. While methods for time-varying delay (TVD) estimation exist many of these are based on maximum likelihood estimation and thus are not well suited to real-time implementation. In this paper we present a method for TVD estimation which is suitable for real-time non-stationary applications. The proposed method combines local all-pass (LAP) filters with a Kalman filter. By using measurement fusion to combine the outputs of several LAP filters in the Kalman filter we can accurately track TVDs whilst allowing for fast and efficient parallel computation. Illustrative simulations demonstrate the effectiveness of the proposed approach.},
   doi       = {10.1109/APSIPAASC47483.2019.9023238},
-  pdf 	 = {APSIPA2019.pdf},
-  slides 	 = {APSIPA2019_Slides.pdf},
+  pdf 	    = {APSIPA2019.pdf},
+  slides 	  = {APSIPA2019_Slides.pdf},
 }
 
 @Article{Mohammed2019,
@@ -331,11 +331,11 @@
   pages     = {1312--1316},
   abstract  = {Image registration is a significant step in a wide range of practical applications and it is a fundamental problem in various computer vision tasks. In this paper, we propose a highly accurate and fast parametric registration method for mobile phone photos. The proposed algorithm is based on a fast and accurate elastic registration algorithm, the Local All-Pass (LAP) algorithm, which performs in a coarse-to-fine manner. At each iteration, the LAP displacement field is fitted by a parametric model. Thus the image registration problem is equivalent to finding a few parameters to describe the displacement field. The fitting step can be performed very efficiently by solving a linear system of equations. In terms of the fitting model, it is easy to change the type of models to do the parametric fitting for specific applications. Experimental results on both synthetic and real images demonstrate the high accuracy and computational efficiency of the proposed algorithm.},
   doi       = {10.1109/ICIP.2019.8803769},
-  pdf 	 = {ICIP2019a.pdf},
+  pdf 	 = {ICIP2019b.pdf},
 }
 
 @Article{Gilliam2018,
-  author    = {C Gilliam and T. Blu},
+  author    = {C. Gilliam and T. Blu},
   title     = {Local All-Pass Geometric Deformations},
   journal   = {{IEEE} Transactions on Image Processing},
   year      = {2018},
@@ -347,7 +347,8 @@
   abstract  = {This paper deals with the estimation of a deformation that describes the geometric transformation between two images. To solve this problem, we propose a novel framework that relies upon the brightness consistency hypothesis-a pixel's intensity is maintained throughout the transformation. Instead of assuming small distortion and linearizing the problem (e.g. via Taylor Series expansion), we propose to interpret the brightness hypothesis as an all-pass filtering relation between the two images. The key advantages of this new interpretation are that no restrictions are placed on the amplitude of the deformation or on the spatial variations of the images. Moreover, by converting the all-pass filtering to a linear forward-backward filtering relation, our solution to the estimation problem equates to solving a linear system of equations, which leads to a highly efficient implementation. Using this framework, we develop a fast algorithm that relates one image to another, on a local level, using an all-pass filter and then extracts the deformation from the filter-hence the name 'Local All-Pass' (LAP) algorithm. The effectiveness of this algorithm is demonstrated on a variety of synthetic and real deformations that are found in applications, such as image registration and motion estimation. In particular, when compared with a selection of image registration algorithms, the LAP obtains very accurate results for significantly reduced computation time and is very robust to noise corruption.},
   groups    = {My Papers},
   publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
-  pdf  	 = {TIP2017.pdf},
+  pdf  	    = {TIP2017.pdf},
+  supp      = {TIP2017_supplementary.pdf},
 }
 
 @InProceedings{Gilliam2018a,

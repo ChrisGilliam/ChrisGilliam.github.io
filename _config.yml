@@ -195,7 +195,7 @@ scholar:
   last_name: Gilliam
   first_name: [Christopher, C.]
 
-  style: apa
+  style: ieee
   locale: en
 
   type_order: [article, incollection, inproceedings]

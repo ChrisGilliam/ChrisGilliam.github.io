@@ -4,8 +4,12 @@
 
 // Typography
 
-p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
+p, h1, h3, h4, h5, h6, em, div, li, span, strong {
   color: var(--global-text-color);
+}
+
+h2 {
+  color: var(--global-theme-color);
 }
 
 hr {
@@ -33,6 +37,7 @@ a, table.table a {
 }
 
 figure, img {
+  margin: 0em;
   max-width: 90vw;
 }
 
@@ -41,7 +46,7 @@ blockquote {
   border-left: 2px solid var(--global-theme-color);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 // Math
@@ -55,8 +60,8 @@ blockquote {
 
 .caption {
   font-size: 0.875rem;
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
@@ -64,13 +69,28 @@ blockquote {
 
 .card {
   background-color: var(--global-card-bg-color);
+  font-weight: lighter;
 
   img {
     width: 100%;
   }
 
+  .card-header {
+    background-color: var(--global-card-bg-color);
+    padding-top: 0;
+    padding-bottom: 0;
+  .btn {
+      text-transform: none;
+      color: var(--global-theme-color);
+      font-size: 1.8rem;
+      font-weight: lighter;
+
+    }
+  }
+
   .card-title {
-    color: var(--global-text-color);
+    color: var(--global-theme-color);
+    font-style: normal;
   }
 
   .card-item {
@@ -358,11 +378,8 @@ footer.sticky-bottom {
 .projects {
   a {
     text-decoration: none;
-
-    &:hover {
-      .card-title {
-        color: var(--global-theme-color);
-      }
+    .card-title {
+      color: var(--global-theme-color);
     }
   }
 
@@ -383,7 +400,7 @@ footer.sticky-bottom {
   }
 
   .grid-sizer, .grid-item {
-    width: 250px;
+    width: 316px;
     margin-bottom: 10px;
   }
 
@@ -427,6 +444,7 @@ footer.sticky-bottom {
     list-style: none;
     padding: 0;
     margin-top: 0;
+    margin-left: 3rem;
 
     li {
       margin-bottom: 1rem;
@@ -449,6 +467,93 @@ footer.sticky-bottom {
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
         }
+      }
+      .title {
+        font-weight: bolder;
+      }
+      .author {
+        a {
+          border-bottom: 1px dashed;
+          color: var(--global-text-color);
+          &:hover {
+              border-bottom-style: solid var(--global-theme-color);
+              text-decoration: none;
+              color: var(--global-theme-color);
+          }
+        }
+        > em {
+          font-style: normal;
+          color: var(--global-theme-color);
+        }
+      }
+      .links {
+        a.btn {
+          color: var(--global-text-color);
+          border: 1px solid var(--global-text-color);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.25rem;
+          padding-bottom: 0.25rem;
+          &:hover {
+            color: var(--global-theme-color);
+            border-color: var(--global-theme-color);
+          }
+        }
+      }
+      .hidden {
+        font-size: 0.875rem;
+        max-height: 0px;
+        overflow: hidden;
+        text-align: justify;
+        transition-property: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -ms-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: all 0.15s ease;
+
+        p {
+          line-height: 1.4em;
+          margin: 10px;
+        }
+        pre {
+          font-size: 1em;
+          line-height: 1.4em;
+          padding: 10px;
+        }
+      }
+      .hidden.open {
+        max-height: 100em;
+        transition-property: 0.15s ease;
+        -moz-transition: 0.15s ease;
+        -ms-transition: 0.15s ease;
+        -o-transition: 0.15s ease;
+        transition: all 0.15s ease;
+      }
+      div.abstract.hidden {
+        border: dashed 1px var(--global-bg-color);
+      }
+      div.abstract.hidden.open {
+        border-color: var(--global-text-color);
+      }
+    }
+  }
+}
+
+
+// References
+
+.references {
+  margin-top: 2rem;
+  ol.bibliography {
+    padding: 0;
+    margin-top: 0;
+    margin-left: 3rem;
+
+    li {
+      margin-bottom: 1rem;
+      .award {
+        color: var(--global-theme-color) !important;
+        border: 1px solid var(--global-theme-color);
       }
       .title {
         font-weight: bolder;
