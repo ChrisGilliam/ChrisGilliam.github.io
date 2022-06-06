@@ -6,7 +6,7 @@ img: assets/img/LAP_Project/LAP_Diagram.png
 importance: 1
 category: work
 ---
-The estimation of a geometric transformation that aligns two or more signals is problem that has many applications in signal processing. The problem occurs when signals are either recorded from two or more spatially separated sensors or when a single sensor is recording a time-varying scene. Examples of fundamental tasks that involve this problem are shown in the figure below. In this project we estimate the transformation between these signals using a novel **local all-pass (LAP) filtering framework**.
+The estimation of a geometric transformation that aligns two or more signals is a problem that has many applications in signal processing. The problem occurs when signals are either recorded from two or more spatially separated sensors or when a single sensor is recording a time-varying scene. Examples of fundamental tasks that involve this problem are shown in the figure below. In this project we estimate the transformation between these signals using a novel **local all-pass (LAP) filtering framework**.
 
 <div class="row">
     <div class="col-sm-1 mt-0">
@@ -18,7 +18,7 @@ The estimation of a geometric transformation that aligns two or more signals is 
     </div>
 </div>
 
-The underlying principle in our LAP framework is that, on a local level, the geometric transformation between a pair of signals can be approximated as a rigid deformation which is equivalent to an all-pass filtering operation. Thus, efficient estimation of the all-pass filter in question allows an accurate estimation of the local geometric transformation between the signals. Accordingly, repeating this estimation for every sample/pixel/voxel in the signals results in a dense, estimation of the whole geometric transformation. This processing chain can be performed efficiently and achieve very accurate results. We have applied this framework to image registration {% cite Gilliam2018 Gilliam2015 Zhang2020 %}, motion correction {% cite Kustner2017 Gilliam2016a %} and time-varying delay estimation {% cite Gilliam2018b %}.
+The underlying principle in our LAP framework is that, on a local level, the geometric transformation between a pair of signals can be approximated as a rigid deformation which is equivalent to an all-pass filtering operation. Thus, efficient estimation of the all-pass filter in question allows an accurate estimation of the local geometric transformation between the signals. Accordingly, repeating this estimation for every sample/pixel/voxel in the signals results in a dense estimation of the whole geometric transformation. This processing chain can be performed efficiently and achieve very accurate results. We have applied this framework to image registration {% cite Gilliam2018 Gilliam2015 Zhang2020 %}, motion correction {% cite Kustner2017 Gilliam2016a %} and time-varying delay estimation {% cite Gilliam2018b %}.
 
 <br>
 
@@ -62,7 +62,7 @@ The underlying principle in our LAP framework is that, on a local level, the geo
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
-        The central concept in our framework that a rigid deformation is equivalent to filtering with an all-pass filter. This filter can be estimated efficiently by leveraging the unique frequency structure of an all-pass filter to obtain a linear forward-backward filtering relation as shown in the figure below. Importantly, as the forward-backward filtering is linear in \(p\), it is straightforward and efficient to solve, see {% cite Gilliam2018 Blu2015 %} for more details.<br>
+        The central concept in our framework is that a rigid deformation is equivalent to filtering with an all-pass filter. This filter can be estimated efficiently by leveraging the unique frequency structure of an all-pass filter to obtain a linear forward-backward filtering relation as shown in the figure below. Importantly, as the forward-backward filtering is linear in \(p\), it is straightforward and efficient to solve, see {% cite Gilliam2018 Blu2015 %} for more details.<br>
         <br>
         <div class="row">
           <div class="col-sm-7 mx-auto">
@@ -112,7 +112,7 @@ The underlying principle in our LAP framework is that, on a local level, the geo
           <div class="col-sm-2">
           </div>
           <div class="col-sm-4">
-            {% include figure.html path="assets/img/LAP_Project/LAP_Flow_LAP_2D.png" title="LAP Deformation Estimate" class="img-fluid rounded z-depth-1" caption="(d) LAP Deformation" zoomable=true %}
+            {% include figure.html path="assets/img/LAP_Project/LAP_Flow_LAP_2D.png" title="LAP Deformation Estimate" class="img-fluid rounded z-depth-1" caption="(d) LAP Deformation Estimate" zoomable=true %}
           </div>
           <div class="col-sm-4">
             {% include figure.html path="assets/img/LAP_Project/Colour_Wheel.png" title="Deformation Colour Code" class="img-fluid rounded z-depth-1" caption="(e) Deformation Colour Code" zoomable=true %}
@@ -169,17 +169,17 @@ The underlying principle in our LAP framework is that, on a local level, the geo
         <br>
         <div class="row">
           <div class="col-sm-4">
-            {% include figure.html path="assets/img/LAP_Project/Input_Images_MRI_P3.gif" title="Fixed-Moving MRI data" class="img-fluid rounded z-depth-1" caption="(a) Fixed and moving MRI data" zoomable=true %}
+            {% include figure.html path="assets/img/LAP_Project/Input_Images_MRI_P3.gif" title="Fixed-Moving MRI data" class="img-fluid rounded z-depth-1" caption="(a) Original MRI data" zoomable=true %}
           </div>
           <div class="col-sm-4">
-            {% include figure.html path="assets/img/LAP_Project/Flow_LAP_MRI_P3.png" title="LAP Deformation" class="img-fluid rounded z-depth-1" caption="(b) LAP deformation" zoomable=true %}
+            {% include figure.html path="assets/img/LAP_Project/Flow_LAP_MRI_P3.png" title="LAP Deformation Estimate" class="img-fluid rounded z-depth-1" caption="(b) LAP deformation" zoomable=true %}
           </div>
           <div class="col-sm-4">
-            {% include figure.html path="assets/img/LAP_Project/LAP_MRI_P3.gif" title="Fixed-Registered MRI data" class="img-fluid rounded z-depth-1" caption="(c) Fixed and LAP registered MRI data" zoomable=true %}
+            {% include figure.html path="assets/img/LAP_Project/LAP_MRI_P3.gif" title="Fixed-Registered MRI data" class="img-fluid rounded z-depth-1" caption="(c) Motion Corrected MRI data" zoomable=true %}
           </div>
         </div>
         <div class="caption">
-          Illustration of the motion correction results obtained using the 3D LAP. Part (a) shows an animation of a 2D coronial slice of the fixed and moving images with motion, part (b) shows a 2D slice of the 3D deformation estimated by the LAP, and part (c) shows an animation of a 2D coronial slice of the fixed and LAP registered images with motion removed.{% cite Gilliam2016 %}
+          Illustration of the motion correction results obtained using the 3D LAP. Part (a) shows an animation of a 2D coronial slice of the fixed and moving images due to respiratory motion, part (b) shows a 2D slice of the 3D deformation estimated by the LAP, and part (c) shows an animation of a 2D coronial slice of images after motion correction using the LAP.{% cite Gilliam2016 %}
         </div>
         <br>
 
@@ -251,7 +251,7 @@ The underlying principle in our LAP framework is that, on a local level, the geo
             {% include figure.html path="assets/img/LAP_Project/EMG_Recording.png" title="1D CLAP Framework" class="img-fluid rounded z-depth-1" caption="(a) HD-sEMG Data Acquisition" zoomable=true %}
           </div>
           <div class="col-sm-7">
-            {% include figure.html path="assets/img/LAP_Project/Real_HD_sEMG_data.png" title="1D CLAP Framework" class="img-fluid rounded z-depth-1" caption="(b) HD-sEMG Data" zoomable=true %}
+            {% include figure.html path="assets/img/LAP_Project/HDsEMG_Data.png" title="1D CLAP Framework" class="img-fluid rounded z-depth-1" caption="(b) HD-sEMG Data" zoomable=true %}
           </div>
         </div>
         <div class="caption">
