@@ -1,8 +1,19 @@
+@InProceedings{Sun2023,
+  author    = {Sun, S. and Gilliam, C. and Ghorbani, K. and Matthews, G. and Jelfs, B.},
+  title     = {Mapping Extended Landmarks for Radar {SLAM}},
+  year      = {Preprint},
+  pages     = {--},
+  abstract  = {Simultaneous localization and mapping (SLAM) using automotive radar sensors can provide enhanced sensing capabilities for autonomous systems. In SLAM applications, with a greater requirement for the environment map, information on the extent of landmarks is vital for precise navigation and path planning. Although object extent estimation has been successfully applied in target tracking, its adaption to SLAM remains unaddressed due to the additional uncertainty of the sensor platform, bias in the odometer reading, as well as the measurement non-linearity. In this paper, we propose to incorporate the Bayesian random matrix approach to estimate the extent of landmarks in radar SLAM. We describe the details for implementation of landmark extent initialization, prediction and update. To validate the performance of our proposed approach we compare with the model-free ellipse fitting algorithm with results showing more consistent extent estimation. We also demonstrate that exploiting the landmark extent in the state update can improve localization accuracy.},
+  arxiv     = {arXiv:2210.17207},
+  doi       = {10.48550/arXiv.2210.17207},
+  pdf       = {ICASSP2023_arXiv.pdf},
+}
+
 @InProceedings{Sun2022,
   author    = {Sun, S. and Jelfs, B. and Ghorbani, K. and Matthews, G. and Gilliam, C.},
   booktitle = {Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA 2022)},
   title     = {Landmark Management in the Application of Radar {SLAM}},
-  year      = {Preprint},
+  year      = {2022},
   pages     = {--},
   abstract  = {This paper focuses on efficient landmark management in radar based simultaneous localization and mapping (SLAM). Landmark management is necessary in order to maintain a consistent map of the estimated landmarks relative to the estimate of the platform's pose. This task is particularly important when faced with multiple detections from the same landmark and/or dynamic environments where the location of a landmark can change. A further challenge with radar data is the presence of false detections. Accordingly, we propose a simple yet efficient rule based solution for radar SLAM landmark management. Assuming a low-dynamic environment, there are several steps in our solution: new landmarks need to be detected and included, false landmarks need to be identified and removed, and the consistency of the landmarks registered in the map needs to be maintained. To illustrate our solution, we run an extended Kalman filter SLAM algorithm in an environment containing both stationary and temporally stationary landmarks. Our simulation results demonstrate that the proposed solution is capable of reliably managing landmarks even when faced with false detections and multiple detections from the same landmark.},
   arxiv     = {arXiv:2209.07199},
@@ -306,6 +317,7 @@
   volume    = {7},
   abstract  = {Arterial endothelium experience physical stress associated with blood flow and play a central role in maintaining vascular integrity and homeostasis in response to hemodynamic forces. Blood flow within vessels is generally laminar and streamlined. However, abrupt changes in the vessel geometry due to branching, sharp turns or stenosis can disturb the laminar blood flow, causing secondary flows in the form of vortices. Such disturbed flow patterns activate pro-inflammatory phenotypes in endothelial cells, damaging the endothelial layer and can lead to atherosclerosis and thrombosis. Here, we report a microfluidic system with integrated ridge-shaped obstacles for generating controllable disturbed flow patterns. This system is used to study the effect of disturbed flow on the cytoskeleton remodeling and nuclear shape and size of cultured human aortic endothelial cells. Our results demonstrate that the generated disturbed flow changes the orientation angle of actin stress fibers and reduces the nuclear size while increases the nuclear circularity.},
   doi       = {10.3389/fbioe.2019.00081},
+  code      = {https://github.com/ChrisGilliam/Stress_Fibre_Orientation},
   groups    = {My Papers},
   publisher = {Frontiers Media {SA}},
 }
