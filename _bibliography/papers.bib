@@ -9,37 +9,6 @@
   pdf       = {ICASSP2023_arXiv.pdf},
 }
 
-@InProceedings{Sun2022,
-  author    = {Sun, S. and Jelfs, B. and Ghorbani, K. and Matthews, G. and Gilliam, C.},
-  booktitle = {Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA 2022)},
-  title     = {Landmark Management in the Application of Radar {SLAM}},
-  year      = {2022},
-  pages     = {--},
-  abstract  = {This paper focuses on efficient landmark management in radar based simultaneous localization and mapping (SLAM). Landmark management is necessary in order to maintain a consistent map of the estimated landmarks relative to the estimate of the platform's pose. This task is particularly important when faced with multiple detections from the same landmark and/or dynamic environments where the location of a landmark can change. A further challenge with radar data is the presence of false detections. Accordingly, we propose a simple yet efficient rule based solution for radar SLAM landmark management. Assuming a low-dynamic environment, there are several steps in our solution: new landmarks need to be detected and included, false landmarks need to be identified and removed, and the consistency of the landmarks registered in the map needs to be maintained. To illustrate our solution, we run an extended Kalman filter SLAM algorithm in an environment containing both stationary and temporally stationary landmarks. Our simulation results demonstrate that the proposed solution is capable of reliably managing landmarks even when faced with false detections and multiple detections from the same landmark.},
-  arxiv     = {arXiv:2209.07199},
-  doi       = {10.48550/arXiv.2209.07199},
-  code      = {https://github.com/shuai000/SLAM_LandmarkManagement},
-  pdf       = {APSIPA2022_arXiv.pdf},
-}
-
-@article{Wang2021a,
-  title     = {Enhancing Inertial Navigation Performance via Fusion of Classical and Quantum Accelerometers},
-  author    = {Wang, X. and Kealy, A. and Gilliam, C. and Haine, S. and Close, J. and Moran, B. and Talbot, K. and Williams, S. and Hardman, K. and Freier, C. and Wigley, P. and White, A. and Szigeti, S. and Legge, S.},
-  journal   = {arXiv},
-  arxiv     = {arXiv:2103.09378},
-  year      = {Preprint},
-  doi       = {10.48550/arXiv.2103.09378},
-}
-
-@article{Wang2022,
-  title     = {Probabilistic Map Matching for Robust Inertial Navigation Aiding},
-  author    = {Wang, X. and Gilliam, C. and Kealy, A. and Close, J. and Moran, B.},
-  journal   = {arXiv},
-  arxiv     = {arXiv:2203.16932},
-  doi       = {10.48550/arXiv.2203.16932},
-  year      = {Preprint}
-}
-
 @article{Li2022,
   title     = {Gravity Aided Navigation using Viterbi Map Matching Algorithm},
   author    = {Li, W. and Gilliam, C. and Wang, X. and Kealy, A. and Greentree, A. and Moran, B.},
@@ -47,6 +16,42 @@
   arxiv     = {arXiv:2204.10492},
   doi       = {10.48550/arXiv.2204.10492},
   year      = {Preprint}
+}
+
+@article{Wang2022,
+  title     = {Probabilistic Map Matching for Robust Inertial Navigation Aiding},
+  author    = {Wang, X. and Gilliam, C. and Kealy, A. and Close, J. and Moran, B.},
+  journal   = {NAVIGATION: Journal of the Institute of Navigation},
+  abstract  = {Robust aiding of inertial navigation systems in GNSS-denied environments is critical for the removal of accumulated navigation error caused by the drift and bias inherent in inertial sensors. One way to perform such an aiding uses matching of geophysical measurements, such as gravimetry, gravity gradiometry or magnetometry, with a known geo-referenced map. Although simple in concept, this map matching procedure is challenging: the measurements themselves are noisy; their associated spatial location is uncertain; and the measurements may match multiple points within the map (i.e. non-unique solution). In this paper, we propose a probabilistic multiple hypotheses tracker to solve the map matching problem and allow robust inertial navigation aiding. Our approach addresses the problem both locally, via probabilistic data association, and temporally by incorporating the underlying platform kinematic constraints into the tracker. The map matching output is then integrated into the navigation system using an unscented Kalman filter. Additionally, we present a statistical measure of local map information density -- the map feature variability -- and use it to weight the output covariance of the proposed algorithm. The effectiveness and robustness of the proposed algorithm are demonstrated using a navigation scenario involving gravitational map matching.},
+  arxiv     = {arXiv:2203.16932},
+  doi       = {10.48550/arXiv.2203.16932},
+  year      = {2023}
+}
+
+@article{Wang2021a,
+  title     = {Improving measurement performance via fusion of classical and quantum accelerometers},
+  author    = {Wang, X. and Kealy, A. and Gilliam, C. and Haine, S. and Close, J. and Moran, B. and Talbot, K. and Williams, S. and Hardman, K. and Freier, C. and Wigley, P. and White, A. and Szigeti, S. and Legge, S.},
+  journal   = {The Journal of Navigation},
+  pages     = {1-12},
+  abstract  = {While quantum accelerometers sense with extremely low drift and low bias, their practical sensing capabilities face at least two limitations compared with classical accelerometers: a lower sample rate due to cold atom interrogation time; and a reduced dynamic range due to signal phase wrapping. In this paper, we propose a maximum likelihood probabilistic data fusion method, under which the actual phase of the quantum accelerometer can be unwrapped by fusing it with the output of a classical accelerometer on the platform. Consequently, the recovered measurement from the quantum accelerometer is used to estimate bias and drift of the classical accelerometer which is then removed from the system output. We demonstrate the enhanced error performance achieved by the proposed fusion method using a simulated 1D accelerometer precision test scenario. We conclude with a discussion on fusion error and potential solutions.},
+  arxiv     = {arXiv:2103.09378},
+  year      = {2023},
+  pdf       = {Nav2023_Xuezhi.pdf},
+  doi       = {10.1017/S0373463322000637},
+}
+
+@InProceedings{Sun2022,
+  author    = {Sun, S. and Jelfs, B. and Ghorbani, K. and Matthews, G. and Gilliam, C.},
+  booktitle = {Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA 2022)},
+  title     = {Landmark Management in the Application of Radar {SLAM}},
+  year      = {2022},
+  pages     = {903--910},
+  abstract  = {This paper focuses on efficient landmark management in radar based simultaneous localization and mapping (SLAM). Landmark management is necessary in order to maintain a consistent map of the estimated landmarks relative to the estimate of the platform's pose. This task is particularly important when faced with multiple detections from the same landmark and/or dynamic environments where the location of a landmark can change. A further challenge with radar data is the presence of false detections. Accordingly, we propose a simple yet efficient rule based solution for radar SLAM landmark management. Assuming a low-dynamic environment, there are several steps in our solution: new landmarks need to be detected and included, false landmarks need to be identified and removed, and the consistency of the landmarks registered in the map needs to be maintained. To illustrate our solution, we run an extended Kalman filter SLAM algorithm in an environment containing both stationary and temporally stationary landmarks. Our simulation results demonstrate that the proposed solution is capable of reliably managing landmarks even when faced with false detections and multiple detections from the same landmark.},
+  arxiv     = {arXiv:2209.07199},
+  doi       = {10.23919/APSIPAASC55919.2022.9980051},
+  code      = {https://github.com/shuai000/SLAM_LandmarkManagement},
+  pdf       = {APSIPA2022_arXiv.pdf},
+  slides    = {APSIPA2022_Slides.pdf}
 }
 
 @article{Kustner2022,
