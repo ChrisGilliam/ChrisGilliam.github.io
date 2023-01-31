@@ -2,16 +2,17 @@
 <html lang="en">
 
   <!-- Head -->
-  <head><meta http-equiv="refresh" content="3; url=https://ChrisGilliam.github.io/" />    <!-- Metadata, OpenGraph and Schema.org -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Christopher  Gilliam | Page not found</title>
+    <title>Christopher  Gilliam | New Paper on Motion Correction for MRI</title>
     <meta name="author" content="Christopher  Gilliam" />
-    <meta name="description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+" />
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
 
 
@@ -32,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/img/wave-square-solid.svg"/>
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://chrisgilliam.github.io/404.html">
+    <link rel="canonical" href="https://chrisgilliam.github.io/news/2022_05_09/">
     
     <!-- Dark Mode -->
     
@@ -75,7 +76,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/news/">News
             </a>
           </li>
@@ -105,20 +106,52 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- page.html -->
-  <div class="post">
+      <!-- _layouts/post.html -->
 
-    <header class="post-header">
-      <h1 class="post-title">Page not found</h1>
-      <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
-    </header>
 
-    <article>
-      <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://ChrisGilliam.github.io/">here</a>.</p>
+<div class="post">
 
-    </article>
+  <header class="post-header">
+    <h1 class="post-title">New Paper on Motion Correction for MRI</h1>
+    <p class="post-meta">May 9, 2022</p>
+  </header>
 
-  </div>
+  <article class="post-content">
+    <p><br>
+We have just published a new paper in APSIPA Transactions on Signal and Information Processing on “<em>Self-Supervised Motion-Corrected Image Reconstruction Network for 4D Magnetic Resonance Imaging of the Body Trunk</em>”. This paper is an extension of our <a href="https://chrisgilliam.github.io/news/2020_12_10/" target="_blank" rel="noopener noreferrer">award winning APSIPA 2020 conference paper</a>.</p>
+
+<p>The paper presents a deep-learning based motion-corrected 4D (3D spatial + time) image reconstruction for magnetic resonance imaging (MRI). The approach combines a non-rigid registration network and a 4D reconstruction network. The non-rigid registration network is based on our <a href="/assets/pdf/TIP2017.pdf" target="_blank">local all-pass filter framework for image registration</a> which was extended to MRI data <a href="/assets/pdf/ISBI2016.pdf" target="_blank">here</a>.</p>
+
+<p>The paper is available here: <a href="/assets/pdf/APSIPA_Trans2022.pdf" target="_blank">Self-Supervised Motion-Corrected Image Reconstruction Network for 4D Magnetic Resonance Imaging of the Body Trunk</a>.</p>
+
+<div class="row">
+    <div class="col-sm-1 mt-0">
+    </div>
+    <div class="col-sm-10 mt-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/DL_Image2-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/DL_Image2-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/DL_Image2-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/DL_Image2.png" title="Deep Learning Network" data-zoomable="">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm-1 mt-0">
+    </div>
+</div>
+<div class="caption">
+    Proposed motion-compensated 4D reconstruction deep learning network
+</div>
+
+  </article>
+
+</div>
 
     </div>
 

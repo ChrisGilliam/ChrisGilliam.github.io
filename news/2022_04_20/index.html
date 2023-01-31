@@ -2,16 +2,17 @@
 <html lang="en">
 
   <!-- Head -->
-  <head><meta http-equiv="refresh" content="3; url=https://ChrisGilliam.github.io/" />    <!-- Metadata, OpenGraph and Schema.org -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Christopher  Gilliam | Page not found</title>
+    <title>Christopher  Gilliam | New Preprints on Gravity Aided Navigation</title>
     <meta name="author" content="Christopher  Gilliam" />
-    <meta name="description" content="Looks like there has been a mistake. Nothing exists here." />
+    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+" />
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
 
 
@@ -32,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/img/wave-square-solid.svg"/>
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://chrisgilliam.github.io/404.html">
+    <link rel="canonical" href="https://chrisgilliam.github.io/news/2022_04_20/">
     
     <!-- Dark Mode -->
     
@@ -75,7 +76,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/news/">News
             </a>
           </li>
@@ -105,20 +106,51 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- page.html -->
-  <div class="post">
+      <!-- _layouts/post.html -->
 
-    <header class="post-header">
-      <h1 class="post-title">Page not found</h1>
-      <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
-    </header>
 
-    <article>
-      <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://ChrisGilliam.github.io/">here</a>.</p>
+<div class="post">
 
-    </article>
+  <header class="post-header">
+    <h1 class="post-title">New Preprints on Gravity Aided Navigation</h1>
+    <p class="post-meta">April 20, 2022</p>
+  </header>
 
-  </div>
+  <article class="post-content">
+    <p><br>
+We have just released two preprints of our latest work on gravity aided navigation on the arXiv. These works tackle the important problem of aiding a vehicle’s inertial navigation system (INS) in a GNSS-denied environment. Specifically, they investigate aiding the INS by matching measurements of gravity to a geo-referenced map of the Earth’s gravitational field.</p>
+
+<p>The papers are available here: <a href="https://arxiv.org/abs/2204.10492" target="_blank" rel="noopener noreferrer">Gravity Aided Navigation using Viterbi Map Matching Algorithm</a> and here <a href="https://arxiv.org/abs/2203.16932" target="_blank" rel="noopener noreferrer">Probabilistic Map Matching for Robust Inertial Navigation Aiding</a> on the arVix.</p>
+
+<div class="row">
+    <div class="col-sm-1 mt-0">
+    </div>
+    <div class="col-sm-10 mt-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/Gravity_Viterbi_Example-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/Gravity_Viterbi_Example-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/Gravity_Viterbi_Example-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/Gravity_Viterbi_Example.png" title="Viterbi Map Matching" data-zoomable="">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm-1 mt-0">
+    </div>
+</div>
+<div class="caption">
+    Example of the Viterbi Map Matching algorithm applied to a navigation scenario. The blue lines indicate the INS estimated positions, the red ones
+indicate the true positions and colour map is the geo-referenced gravitational map.
+</div>
+
+  </article>
+
+</div>
 
     </div>
 

@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Christopher  Gilliam | Multi-Dimensional Signal Alignment</title>
+    <meta name="author" content="Christopher  Gilliam" />
+    <meta name="description" content="Local All-Pass Filter Framework" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/wave-square-solid.svg"/>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://chrisgilliam.github.io/projects/LAP_ImageRegistration/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark" />
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+  <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="https://ChrisGilliam.github.io/">
+       <span class="font-weight-bold">Christopher</span>   Gilliam
+      </a>
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/news/">News
+            </a>
+          </li>
+          
+
+          <!-- Other pages -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/publications/">Publications</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/research/">Research</a>
+          </li>
+
+          <!-- Toogle theme mode -->
+          <div class="toggle-container">
+            <a id="light-toggle">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- page.html -->
+  <div class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">Multi-Dimensional Signal Alignment</h1>
+      <p class="post-description">Local All-Pass Filter Framework</p>
+    </header>
+
+    <article>
+      <p>The estimation of a geometric transformation that aligns two or more signals is a problem that has many applications in signal processing. The problem occurs when signals are either recorded from two or more spatially separated sensors or when a single sensor is recording a time-varying scene. Examples of fundamental tasks that involve this problem are shown in the figure below. In this project we estimate the transformation between these signals using a novel <strong>local all-pass (LAP) filtering framework</strong>.</p>
+
+<div class="row">
+    <div class="col-sm-1 mt-0">
+    </div>
+    <div class="col-sm-10 mt-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Signal_Alignment_Problems-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Signal_Alignment_Problems-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Signal_Alignment_Problems-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Signal_Alignment_Problems.png" title="Applications of Signal Alignment" data-zoomable="">
+
+  </picture><figcaption class="caption">Applications requiring multi-dimensional signal alignment.</figcaption>
+
+</figure>
+
+    </div>
+    <div class="col-sm-1 mt-0">
+    </div>
+</div>
+
+<p>The underlying principle in our LAP framework is that, on a local level, the geometric transformation between a pair of signals can be approximated as a rigid deformation which is equivalent to an all-pass filtering operation. Thus, efficient estimation of the all-pass filter in question allows an accurate estimation of the local geometric transformation between the signals. Accordingly, repeating this estimation for every sample/pixel/voxel in the signals results in a dense estimation of the whole geometric transformation. This processing chain can be performed efficiently and achieve very accurate results. We have applied this framework to image registration <a class="citation" href="#Gilliam2018">[1], [2], [3]</a>, motion correction <a class="citation" href="#Kustner2017">[4], [5]</a> and time-varying delay estimation <a class="citation" href="#Gilliam2018b">[6]</a>.</p>
+
+<p><br></p>
+
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <!-- Start: The Problem description -->
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        The Problem
+        </button>
+      </h2>
+    </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body" id="The_Problem">
+        Our problem comprises finding a geometric transform \(\mathcal{T}\) between two signals based on the variation of their sample intensities. We consider a non-rigid transformation characterized by a sample-wise deformation field \(\mathrm{u}\) of the form:
+
+        $$ \mathcal{T}({\bf x}) = {\bf x} + {\bf u}({\bf x}), $$
+
+        where \(\mathbf{x} = [x_1,x_2,\ldots,x_n]^{T}\) is the nth dimensional sample coordinate and \(\mathbf{u}(\mathbf{x}) = [u_1(\mathbf{x}),u_2(\mathbf{x}),\ldots,u_n(\mathbf{x})]^{T}\) is the vector field representing the deformation. We formulate the estimation of this transform assuming the brightness consistency hypothesis: a sample's intensity remains constant under the deformation. Thus, given two signals \(I_1(\mathbf{x})\) and \(I_2(\mathbf{x})\), our problem is to find a deformation field that relates these signals as follows:
+
+        $$ I_2(\mathbf{x}+\mathbf{u}(\mathbf{x})) = I_1(\mathbf{x}).$$
+
+        <blockquote> <em><strong>Remark:</strong> This problem is both restrictive, as the brightness consistency is unlikely to be satisfied exactly, and ill-posed as, for \(n&gt;1\) many deformations many satisfy the equation and most are meaningless. However, in many applications, it is important to determine a meaningful deformation field.</em> </blockquote>
+
+        To overcome these challenges, we assume the deformation field is slowly varying such that locally it is equivalent to a rigid deformation and apply our local all-pass filter framework.
+
+      </div>
+    </div>
+    <!-- End: The Problem Description -->
+  </div>
+
+  <div class="card">
+    <!-- Start: LAP Framework -->
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Local All-Pass Filter Framework
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        The central concept in our framework is that a rigid deformation is equivalent to filtering with an all-pass filter. This filter can be estimated efficiently by leveraging the unique frequency structure of an all-pass filter to obtain a linear forward-backward filtering relation as shown in the figure below. Importantly, as the forward-backward filtering is linear in \(p\), it is straightforward and efficient to solve, see <a class="citation" href="#Gilliam2018">[1], [7]</a> for more details.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-7 mx-auto">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/AP_Fig2-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/AP_Fig2-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/AP_Fig2-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/AP_Fig2.png" title="All-Pass Filtering Relationship" data-zoomable="">
+
+  </picture><figcaption class="caption">Forward-Backward Filtering Relationship</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <br>
+        To allow for a non-rigid deformation, we limit this estimation to a small local region, estimate a local all-pass filter and extract a local estimate of the deformation. This local estimate corresponds to the centre of the region. Accordingly, a dense, per-sample, deformation estimate is obtained by repeating this process for all the samples in the signal using a sliding-window mechanism, see figure below. Importantly, as discussed in <a class="citation" href="#Gilliam2018">[1]</a> this can be performed very efficiently. <br>
+
+        <br>
+        <div class="row">
+          <div class="col-sm-7 mx-auto">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/LAP_Diagram-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/LAP_Diagram-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/LAP_Diagram-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/LAP_Diagram.png" title="LAP Algorithm" data-zoomable="">
+
+  </picture><figcaption class="caption">Illustration of the Local All-Pass Filter Framework</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End: LAP Framework -->
+  </div>
+
+  <div class="card">
+    <!-- Start: Image Registration -->
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Image Registration
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        We have applied our LAP framework to both non-rigid <a class="citation" href="#Gilliam2018">[1]</a> and parametric <a class="citation" href="#Zhang2020">[3]</a> image registration. An example of the results obtained from the LAP for a non-rigid registration is shown in the figure below. The input images are shown in (a) and (c), ground truth deformation in (b) and the LAP estimated deformation in (d). Note that each colour represents the direction of the deformation and a colour code is shown in (e).<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Image1_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Image1_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Image1_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Image1_LAP_2D.png" title="Image 1" data-zoomable="">
+
+  </picture><figcaption class="caption">(a) Image 1</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/GTFlow_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/GTFlow_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/GTFlow_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/GTFlow_LAP_2D.png" title="Ground Truth Deformation" data-zoomable="">
+
+  </picture><figcaption class="caption">(b) True Deformation</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Image2_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Image2_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Image2_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Image2_LAP_2D.png" title="Image 2" data-zoomable="">
+
+  </picture><figcaption class="caption">(c) Image 2</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/LAP_Flow_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/LAP_Flow_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/LAP_Flow_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/LAP_Flow_LAP_2D.png" title="LAP Deformation Estimate" data-zoomable="">
+
+  </picture><figcaption class="caption">(d) LAP Deformation Estimate</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Colour_Wheel-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Colour_Wheel-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Colour_Wheel-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Colour_Wheel.png" title="Deformation Colour Code" data-zoomable="">
+
+  </picture><figcaption class="caption">(e) Deformation Colour Code</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="caption">
+          Illustration of the smoothly varying deformation and its estimation using the LAP framework. The first image is shown in (a), the smoothly varying deformation in (b), the second image in (c) and the LAP deformation estimate in (d). The colour coding for the deformation (each colour represents a different direction of the deformation) is in (e). Note that the deformation has a maximum displacement of 15 pixels. <a class="citation" href="#Gilliam2015">[2]</a>
+        </div>
+        <br>
+        To allow estimation of both slowly and quickly varying deformations, we use an iterative poly-filter LAP framework that starts with large filters estimating the deformation, aligning the images and then repeating with a smaller filter <a class="citation" href="#Gilliam2018">[1]</a>.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-6">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/MS_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/MS_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/MS_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/MS_LAP_2D.png" title="Poly-Filter LAP" data-zoomable="">
+
+  </picture><figcaption class="caption">Poly-Filter LAP Framework</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <br>
+        <h5> Parametric Registration</h5>
+        For parametric image registration, we introduce a quadratic parametric model for the deformation and iteratively estimate the parameters of the model <a class="citation" href="#Zhang2020">[3], [8], [9]</a>. This parametric extension is robust to model mis-match (noise, blurring, etc), very accurate and capable of handling very large deformations. Furthermore, by modeling intensity variations, the parametric LAP is capable of handling multi-modal registration problems.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Image1_Para_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Image1_Para_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Image1_Para_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Image1_Para_LAP_2D.jpg" title="Image 1" data-zoomable="">
+
+  </picture><figcaption class="caption">(a) Image 1</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Image2_Para_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Image2_Para_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Image2_Para_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Image2_Para_LAP_2D.jpg" title="Image 2" data-zoomable="">
+
+  </picture><figcaption class="caption">(b) Image 2</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Result_Para_LAP_2D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Result_Para_LAP_2D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Result_Para_LAP_2D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Result_Para_LAP_2D.jpg" title="Parametric LAP Registration" data-zoomable="">
+
+  </picture><figcaption class="caption">(c) LAP Registration</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="caption">
+          Illustration of the results of applying the parametric LAP. The first image is shown in (a), the second image in (b) and the registration of image 2 to image 1 using the deformation obtained from the parametric LAP. <a class="citation" href="#Zhang2020">[3]</a>
+        </div>
+      </div>
+    </div>
+    <!-- End: Image Registration -->
+  </div>
+
+  <div class="card">
+    <!-- Start: MRI Motion Correction -->
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Motion Correction for MR Images
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        We have applied our LAP framework to 3D volumetric magnetic resonance imaging (MRI) data to remove artefacts caused by respiratory motion <a class="citation" href="#Gilliam2016">[10]</a>. We first estimate the deformation field between the two images (i.e. determining the respiratory motion) and then remove the motion by registering the moving image to the fixed image. Our approach outperformed existing 3D non-rigid registration algorithms in both accuracy and computation speed and was incorporate into a joint MRI/PET motion correction system <a class="citation" href="#Kustner2017">[4]</a>. An example of the results obtained from the 3D LAP for respiratory motion estimation on an <em>in-vivo</em> MRI dataset is shown below.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Input_Images_MRI_P3.gif-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Input_Images_MRI_P3.gif-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Input_Images_MRI_P3.gif-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Input_Images_MRI_P3.gif" title="Fixed-Moving MRI data" data-zoomable="">
+
+  </picture><figcaption class="caption">(a) Original MRI data</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Flow_LAP_MRI_P3-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Flow_LAP_MRI_P3-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Flow_LAP_MRI_P3-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Flow_LAP_MRI_P3.png" title="LAP Deformation Estimate" data-zoomable="">
+
+  </picture><figcaption class="caption">(b) LAP deformation</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-4">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/LAP_MRI_P3.gif-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/LAP_MRI_P3.gif-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/LAP_MRI_P3.gif-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/LAP_MRI_P3.gif" title="Fixed-Registered MRI data" data-zoomable="">
+
+  </picture><figcaption class="caption">(c) Motion Corrected MRI data</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="caption">
+          Illustration of the motion correction results obtained using the 3D LAP. Part (a) shows an animation of a 2D coronial slice of the fixed and moving images due to respiratory motion, part (b) shows a 2D slice of the 3D deformation estimated by the LAP, and part (c) shows an animation of a 2D coronial slice of images after motion correction using the LAP.<a class="citation" href="#Gilliam2016">[10]</a>
+        </div>
+        <br>
+
+        To allow estimation of both slowly and quickly varying deformations, we use an iterative poly-filter 3D LAP framework that starts with large filters estimating the deformation, aligning the images and then repeating with a smaller filter <a class="citation" href="#Gilliam2016">[10]</a>.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-6 mx-auto">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/MS_LAP_3D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/MS_LAP_3D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/MS_LAP_3D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/MS_LAP_3D.png" title="Poly-filter 3D LAP" data-zoomable="">
+
+  </picture><figcaption class="caption">Poly-Filter 3D LAP Framework</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <br>
+        <h5>LAP + Deep Learning</h5>
+        More recently, the LAP framework has been combined with a deep learning architecture to allow robust motion correction when faced with highly-accelerated, undersampled, MRI data <a class="citation" href="#Kustner2021">[11]</a>. This network has also been combined with a reconstruction network to allow motion-corrected reconstruction of 4D (3D + time) MRI data <a class="citation" href="#Kustner2020">[12], [13]</a>. The architecture of this LAP deep learning network (LAPNet) is shown below.
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-sm-11 mx-auto">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/Motion_DL_Network-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/Motion_DL_Network-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/Motion_DL_Network-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/Motion_DL_Network.png" title="LAPNet architecture" data-zoomable="">
+
+  </picture>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="caption">
+          Proposed LAPNet architecture to perform non-rigid registration in MRI k-space. <a class="citation" href="#Kustner2021">[11]</a>
+        </div>
+        <br>
+
+      </div>
+    </div>
+    <!-- End: MRI Motion Correction -->
+  </div>
+
+  <div class="card">
+    <!-- Start: Time-Varying Delay Estimation -->
+    <div class="card-header" id="headingFive">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Time-Varying Delay Estimation
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+      <div class="card-body">
+        We have applied our LAP framework to 1D signals recorded from spatial separate sensors to estimate a 1D deformation, which is normally referred to as a time-varying delay signal <a class="citation" href="#Gilliam2018b">[6]</a>. Furthermore, we extend our framework to allow for the estimation of a deformation that is common to an ensemble of signals, which we term the Common LAP (CLAP). Illustrations of the 1D LAP framework and the 1D CLAP framework are shown below.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/LAP_Fig_1D-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/LAP_Fig_1D-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/LAP_Fig_1D-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/LAP_Fig_1D.png" title="1D LAP Framework" data-zoomable="">
+
+  </picture><figcaption class="caption">(a) 1D LAP Framework</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-6">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/CLAP_Diagram-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/CLAP_Diagram-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/CLAP_Diagram-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/CLAP_Diagram.png" title="1D CLAP Framework" data-zoomable="">
+
+  </picture><figcaption class="caption">(b) 1D CLAP Framework</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="caption">
+          Illustration of the LAP framework for a pair of 1D signals in (a) and the CLAP framework for an ensemble of 1D signals in (b). The CLAP framework estimates a set of local all-pass filters that are common to the ensemble of signals.
+        </div>
+        To allow estimation of both slowly and quickly varying deformations, we use an iterative multi-scale CLAP framework that starts with large filters estimating the deformation, aligning the images and then repeating with a smaller filter <a class="citation" href="#Gilliam2018b">[6]</a>.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-6 mx-auto">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/CLAP_MS-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/CLAP_MS-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/CLAP_MS-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/CLAP_MS.png" title="Multi-scale 1D CLAP Framework" data-zoomable="">
+
+  </picture><figcaption class="caption">Multi-scale 1D CLAP Framework</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <br>
+        <br>
+        <h5>High-Density Surface EMG (HD-sEMG):</h5>
+        We use our CLAP framework to estimate conduction velocity (CV) from high-density surface electromyography (sEMG) recordings <a class="citation" href="#Gilliam2018b">[6], [14]</a>. CV describes the speed of propagation of motor unit action potentials (MUAPs) along the muscle fibre and is an important factor in the study of muscle activity revealing information regarding pathology, fatigue or pain in the muscle.<br>
+        <br>
+        <div class="row">
+          <div class="col-sm-5">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/EMG_Recording-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/EMG_Recording-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/EMG_Recording-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/EMG_Recording.png" title="1D CLAP Framework" data-zoomable="">
+
+  </picture><figcaption class="caption">(a) HD-sEMG Data Acquisition</figcaption>
+
+</figure>
+
+          </div>
+          <div class="col-sm-7">
+            <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/LAP_Project/HDsEMG_Data-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/LAP_Project/HDsEMG_Data-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/LAP_Project/HDsEMG_Data-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/LAP_Project/HDsEMG_Data.png" title="1D CLAP Framework" data-zoomable="">
+
+  </picture><figcaption class="caption">(b) HD-sEMG Data</figcaption>
+
+</figure>
+
+          </div>
+        </div>
+        <div class="caption">
+          Illustration of acquiring high-density sEMG data from the bicep, (a), and the corresponding ensemble of electrode signals with a common time-varying delay, (b).
+        </div>
+      </div>
+    </div>
+    <!-- End: Time-Varying Delay Estimation -->
+  </div>
+
+  <div class="card">
+    <!-- Start: Code -->
+    <div class="card-header" id="headingSix">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Code
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+      <div class="card-body">
+
+        Motion Correction for MRI code can be found: <a href="https://github.com/thomaskuestner/MoCoGUI" target="_blank" rel="noopener noreferrer">here</a> <br>
+        <br>
+        Delay estimation code can be found: <a href="https://github.com/beteje/LAP_DelayEstimation" target="_blank" rel="noopener noreferrer">here</a><br>
+        This code contains the several implementations of the LAP framework and a signal generation function which has a number of different delay functions.
+      </div>
+    </div>
+    <!-- End: Code -->
+  </div>
+
+</div>
+
+<h2><br></h2>
+<h2 id="references">References</h2>
+<div class="references">
+  <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Gilliam2018" class="col-sm-10">
+    
+      <div class="title">Local All-Pass Geometric Deformations</div>
+      <div class="author">
+                  <em>C. Gilliam</em>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>IEEE Transactions on Image Processing</em>,
+      
+      
+        Vol. 27,
+      
+      
+        No. 2,
+      
+      
+        pp. 1010–1025,
+      
+      
+        feb
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/TIP.2017.2765822" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/TIP2017.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+      
+      <a href="/assets/pdf/TIP2017_supplementary.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper deals with the estimation of a deformation that describes the geometric transformation between two images. To solve this problem, we propose a novel framework that relies upon the brightness consistency hypothesis-a pixel’s intensity is maintained throughout the transformation. Instead of assuming small distortion and linearizing the problem (e.g. via Taylor Series expansion), we propose to interpret the brightness hypothesis as an all-pass filtering relation between the two images. The key advantages of this new interpretation are that no restrictions are placed on the amplitude of the deformation or on the spatial variations of the images. Moreover, by converting the all-pass filtering to a linear forward-backward filtering relation, our solution to the estimation problem equates to solving a linear system of equations, which leads to a highly efficient implementation. Using this framework, we develop a fast algorithm that relates one image to another, on a local level, using an all-pass filter and then extracts the deformation from the filter-hence the name ’Local All-Pass’ (LAP) algorithm. The effectiveness of this algorithm is demonstrated on a variety of synthetic and real deformations that are found in applications, such as image registration and motion estimation. In particular, when compared with a selection of image registration algorithms, the LAP obtains very accurate results for significantly reduced computation time and is very robust to noise corruption.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Gilliam2015" class="col-sm-10">
+    
+      <div class="title">Local All-Pass Filters for Optical Flow Estimation</div>
+      <div class="author">
+                  <em>C. Gilliam</em>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2015)</em>, Brisbane, Australia,
+      
+      
+      
+      
+        pp. 1533–1537,
+      
+      
+        apr
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/ICASSP.2015.7178227" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2015.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2015_Poster.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
+      
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2015_Slides.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+      
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The optical flow is a velocity field that describes the motion of
+	pixels within a sequence (or set) of images. Its estimation plays
+	an important role in areas such as motion compensation, object tracking
+	and image registration. In this paper, we present a novel framework
+	to estimate the optical flow using local all-pass filters. Instead
+	of using the optical flow equation, the framework is based on relating
+	one image to another, on a local level, using an all-pass filter
+	and then extracting the optical flow from the filter. Using this
+	framework, we present a fast novel algorithm for estimating a smoothly
+	varying optical flow, which we term the Local All-Pass (LAP) algorithm.
+	We demonstrate that this algorithm is consistent and accurate, and
+	that it outperforms three state-of-the-art algorithms when estimating
+	constant and smoothly varying flows. We also show initial competitive
+	results for real images.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Zhang2020" class="col-sm-10">
+    
+      <div class="title">All-Pass Parametric Image Registration</div>
+      <div class="author">X. Zhang, 
+                  <em>C. Gilliam</em>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>IEEE Transactions on Image Processing</em>,
+      
+      
+        Vol. 29,
+      
+      
+      
+        pp. 5625–5640,
+      
+      
+        apr
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/tip.2020.2984897" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/TIP2020.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+      
+      <a href="/assets/pdf/TIP2020_supplementary.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Image registration is a required step in many practical applications that involve the acquisition of multiple related images. In this paper, we propose a methodology to deal with both the geometric and intensity transformations in the image registration problem. The main idea is to modify an accurate and fast elastic registration algorithm (Local All-Pass - LAP) so that it returns a parametric displacement field, and to estimate the intensity changes by fitting another parametric expression. Although we demonstrate the methodology using a low-order parametric model, our approach is highly flexible and easily allows substantially richer parametrisations, while requiring only limited extra computation cost. In addition, we propose two novel quantitative criteria to evaluate the accuracy of the alignment of two images (’salience correlation’) and the number of degrees of freedom (’parsimony’) of a displacement field, respectively. Experimental results on both synthetic and real images demonstrate the high accuracy and computational efficiency of our methodology. Furthermore,  we demonstrate that the resulting displacement fields are more parsimonious than the ones obtained in other state-of-the-art image registration approaches.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Kustner2017" class="col-sm-10">
+    
+      <div class="title">MR-based respiratory and cardiac motion correction for PET imaging</div>
+      <div class="author">
+<a href="http://www.midaslab.org/" target="_blank" rel="noopener noreferrer">T. Küstner</a>, M. Schwartz, P. Martirosian, S. Gatidis, F. Seith, 
+                  <em>C. Gilliam</em>, <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>, H. Fayad, D. Visvikis, F. Schick, B. Yang, H. Schmidt, and N.F. Schwenzer
+      </div>
+
+      <div class="periodical">
+      
+        <em>Medical Image Analysis</em>,
+      
+      
+        Vol. 42,
+      
+      
+      
+        pp. 129–144,
+      
+      
+        dec
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1016/j.media.2017.08.002" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/Kustner2017.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Purpose: To develop a motion correction for Positron-Emission-Tomography (PET) using simultaneously acquired magnetic-resonance (MR) images within 90.
+
+Methods: A 90s MR acquisition allows the generation of a cardiac and respiratory motion model of the body trunk. Thereafter, further diagnostic MR sequences can be recorded during the PET examination without any limitation. To provide full PET scan time coverage, a sensor fusion approach maps external motion signals (respiratory belt, ECG-derived respiration signal) to a complete surrogate signal on which the retrospective data binning is performed. A joint Compressed Sensing reconstruction and motion estimation of the subsampled data provides motion-resolved MR images (respiratory + cardiac). A 1-POINT DIXON method is applied to these MR images to derive a motion-resolved attenuation map. The motion model and the attenuation map are fed to the Customizable and Advanced Software for Tomographic Reconstruction (CASToR) PET reconstruction system in which the motion correction is incorporated. All reconstruction steps are performed online on the scanner via Gadgetron to provide a clinically feasible setup for improved general applicability. The method was evaluated on 36 patients with suspected liver or lung metastasis in terms of lesion quantification (SUVmax, SNR, contrast), delineation (FWHM, slope steepness) and diagnostic confidence level (3-point Likert-scale).
+
+Results: A motion correction could be conducted for all patients, however, only in 30 patients moving lesions could be observed. For the examined 134 malignant lesions, an average improvement in lesion quantification of 22%, delineation of 64% and diagnostic confidence level of 23% was achieved.
+
+Conclusion: The proposed method provides a clinically feasible setup for respiratory and cardiac motion correction of PET data by simultaneous short-term MRI. The acquisition sequence and all reconstruction steps are publicly available to foster multi-center studies and various motion correction scenarios.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Gilliam2016a" class="col-sm-10">
+    
+      <div class="title">3D Motion Flow Estimation using Local All-Pass Filters</div>
+      <div class="author">
+                  <em>C. Gilliam</em>, <a href="http://www.midaslab.org/" target="_blank" rel="noopener noreferrer">T. Küstner</a>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Symposium on Biomedical Imaging (ISBI 2016)</em>, Prague, Czech Republic,
+      
+      
+      
+      
+        pp. 282–285,
+      
+      
+        apr
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/isbi.2016.7493264" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ISBI2016.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ISBI2016_Poster.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
+      
+    
+    
+      
+      <a href="/assets/pdf/ISBI2016_Slides.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+      
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Fast and accurate motion estimation is an important tool in biomedical imaging applications such as motion compensation and image registration. In this paper, we present a novel algorithm to estimate motion in volumetric images based on the recently developed Local All-Pass (LAP) optical flow framework. The framework is built upon the idea that any motion can be regarded as a local rigid displacement and is hence equivalent to all-pass filtering. Accordingly, our algorithm aims to relate two images, on a local level, using a 3D all-pass filter and then extract the local motion flow from the filter. As this process is based on filtering, it can be efficiently repeated over the whole image volume allowing fast estimation of a dense 3D motion. We demonstrate the effectiveness of this algorithm on both synthetic motion flows and in-vivo MRI data involving respiratory motion. In particular, the algorithm obtains greater accuracy for significantly reduced computation time when compared to competing approaches.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Gilliam2018b" class="col-sm-10">
+    
+      <div class="title">Time-Varying Delay Estimation Using Common Local All-Pass Filters with Application to Surface Electromyography</div>
+      <div class="author">
+                  <em>C. Gilliam</em>, A. Bingham, <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>, and <a href="https://beteje.github.io/" target="_blank" rel="noopener noreferrer">B. Jelfs</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2018)</em>, Calgary, Canada,
+      
+      
+      
+      
+        pp. 841–845,
+      
+      
+        apr
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/ICASSP.2018.8461390" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2018a.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2018a_Slides.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+      
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Estimation of conduction velocity (CV) is an important task in the analysis of surface electromyography (sEMG). The problem can be framed as estimation of a time-varying delay (TVD) between electrode recordings. In this paper we present an algorithm which incorporates information from multiple electrodes into a single TVD estimation. The algorithm uses a common all-pass filter to relate two groups of signals at a local level. We also address a current limitation of CV estimators by providing an automated way of identifying the innervation zone from a set of electrode recordings, thus allowing incorporation of the entire array into the estimation. We validate the algorithm on both synthetic and real sEMG data with results showing the proposed algorithm is both robust and accurate.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Blu2015" class="col-sm-10">
+    
+      <div class="title">Approximation Order of the LAP Optical Flow Algorithm</div>
+      <div class="author">
+<a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>, P. Moulin, and <em>C. Gilliam</em>
+                
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Conference on Image Processing (ICIP 2015)</em>, Québec City, Canada,
+      
+      
+      
+      
+        pp. 48 - 52,
+      
+      
+        sep
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/ICIP.2015.7350757" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICIP2015a.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICIP2015a_poster.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
+      
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Estimating the displacements between two images is often addressed
+	using a small displacement assumption, which leads to what is known
+	as the optical flow equation. We study the quality of the underlying
+	approximation for the recently developed Local All-Pass (LAP) optical
+	flow algorithm, which is based on another approach–displacements
+	result from filtering. While the simplest version of LAP computes
+	only first-order differences, we show that the order of LAP approximation
+	is quadratic, unlike standard optical flow equation based algorithms
+	for which this approximation is only linear. More generally, the
+	order of approximation of the LAP algorithm is twice larger than
+	the differentiation order involved. The key step in the derivation
+	is the use of Padé approximants.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Zhang2017" class="col-sm-10">
+    
+      <div class="title">Iterative fitting after elastic registration: An efficient strategy for accurate estimation of parametric deformations</div>
+      <div class="author">X. Zhang, 
+                  <em>C. Gilliam</em>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Conference on Image Processing (ICIP 2017)</em>, Beijing, China,
+      
+      
+      
+      
+        pp. 1492–1496,
+      
+      
+        sep
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/ICIP.2017.8296530" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICIP2017.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We propose an efficient method for image registration based on iteratively fitting a parametric model to the output of an elastic registration. It combines the flexibility of elastic registration - able to estimate complex deformations - with the robustness of parametric registration - able to estimate very large displacement. Our approach is made feasible by using the recent Local All-Pass (LAP) algorithm; a fast and accurate filter-based method for estimating the local deformation between two images. Moreover, at each iteration we fit a linear parametric model to the local deformation which is equivalent to solving a linear system of equations (very fast and efficient). We use a quadratic polynomial model however the framework can easily be extended to more complicated models. The significant advantage of the proposed method is its robustness to model mis-match (e.g. noise and blurring). Experimental results on synthetic images and real images demonstrate that the proposed algorithm is highly accurate and outperforms a selection of image registration approaches.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Zhang2019c" class="col-sm-10">
+    
+      <div class="title">Parametric Registration for Mobile Phone Images</div>
+      <div class="author">X. Zhang, 
+                  <em>C. Gilliam</em>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Conference on Image Processing (ICIP 2019)</em>, Taipei, Taiwan,
+      
+      
+      
+      
+        pp. 1312–1316,
+      
+      
+        sep
+      
+      
+        2019
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/ICIP.2019.8803769" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICIP2019b.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Image registration is a significant step in a wide range of practical applications and it is a fundamental problem in various computer vision tasks. In this paper, we propose a highly accurate and fast parametric registration method for mobile phone photos. The proposed algorithm is based on a fast and accurate elastic registration algorithm, the Local All-Pass (LAP) algorithm, which performs in a coarse-to-fine manner. At each iteration, the LAP displacement field is fitted by a parametric model. Thus the image registration problem is equivalent to finding a few parameters to describe the displacement field. The fitting step can be performed very efficiently by solving a linear system of equations. In terms of the fitting model, it is easy to change the type of models to do the parametric fitting for specific applications. Experimental results on both synthetic and real images demonstrate the high accuracy and computational efficiency of the proposed algorithm.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Gilliam2016" class="col-sm-10">
+    
+      <div class="title">Finding the Minimum Rate of Innovation in the Presence of Noise</div>
+      <div class="author">
+                  <em>C. Gilliam</em>, and <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2016)</em>, Shanghai, China,
+      
+      
+      
+      
+      
+        mar
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/icassp.2016.7472432" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2016.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/ICASSP2016_Slides.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+      
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Recently, sampling theory has been broadened to include a class of non-bandlimited signals that possess finite rate of innovation (FRI). In this paper, we consider the problem of determining the minimum rate of innovation (RI) in a noisy setting. First, we adapt a recent model-fitting algorithm for FRI recovery and demonstrate that it achieves the Cramér-Rao bounds. Using this algorithm, we then present a framework to estimate the minimum RI based on fitting the sparsest model to the noisy samples whilst satisfying a mean squared error (MSE) criterion - a signal is recovered if the output MSE is less than the input MSE. Specifically, given a RI, we use the MSE criterion to judge whether our model-fitting has been a success or a failure. Using this output, we present a Dichotomic algorithm that performs a binary search for the minimum RI and demonstrate that it obtains a sparser RI estimate than an existing information criterion approach.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Kustner2021" class="col-sm-10">
+    
+      <div class="title">LAPNet: Non-Rigid Registration Derived in k-Space for Magnetic Resonance Imaging</div>
+      <div class="author">
+<a href="http://www.midaslab.org/" target="_blank" rel="noopener noreferrer">T. Küstner</a>, J. Pan, H. Qi, G. Cruz, 
+                  <em>C. Gilliam</em>, <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>, B. Yang, S. Gatidis, R. Botnar, and C. Prieto
+      </div>
+
+      <div class="periodical">
+      
+        <em>IEEE Transactions on Medical Imaging</em>,
+      
+      
+        Vol. 40,
+      
+      
+        No. 12,
+      
+      
+        pp. 3686–3697,
+      
+      
+        dec
+      
+      
+        2021
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1109/TMI.2021.3096131" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+      <a href="http://arxiv.org/abs/arXiv:2107.09060" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">arXiv</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Physiological motion, such as cardiac and respiratory motion, during Magnetic Resonance (MR) image acquisition can cause image artifacts. Motion correction techniques have been proposed to compensate for these types of motion during thoracic scans, relying on accurate motion estimation from undersampled motion-resolved reconstruction. A particular interest and challenge lie in the derivation of reliable non-rigid motion fields from the undersampled motion-resolved data. Motion estimation is usually formulated in image space via diffusion, parametric-spline, or optical flow methods. However, image-based registration can be impaired by remaining aliasing artifacts due to the undersampled motion-resolved reconstruction. In this work, we describe a formalism to perform non-rigid registration directly in the sampled Fourier space, i.e. k-space. We propose a deep-learning based approach to perform fast and accurate non-rigid registration from the undersampled k-space data. The basic working principle originates from the Local All-Pass (LAP) technique, a recently introduced optical flow-based registration. The proposed LAPNet is compared against traditional and deep learning image-based registrations and tested on fully-sampled and highly-accelerated (with two undersampling strategies) 3D respiratory motion-resolved MR images in a cohort of 40 patients with suspected liver or lung metastases and 25 healthy subjects. The proposed LAPNet provided consistent and superior performance to image-based approaches throughout different sampling trajectories and acceleration factors.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Kustner2020" class="col-sm-10">
+    
+      <div class="title">Deep-learning based motion-corrected image reconstruction in 4D magnetic resonance imaging of the body trunk</div>
+      <div class="author">
+<a href="http://www.midaslab.org/" target="_blank" rel="noopener noreferrer">T. Küstner</a>, J. Pan, 
+                  <em>C. Gilliam</em>, H. Qi, G. Cruz, K. Hammernik, B. Yang, <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>, D. Rueckert, R. Botnar, C. Prieto, and S. Gatidis
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA 2020)</em>, ,
+      
+      
+      
+      
+        pp. 976–985,
+      
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+    
+    
+      <a href="https://ieeexplore.ieee.org/document/9306428" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">HTML</a>
+    
+    
+      
+      <a href="/assets/pdf/APSIPA2020b.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Respiratory and cardiac motion can cause artifacts in magnetic resonance imaging of the body trunk if patients cannot hold their breath or triggered acquisitions are not practical. Retrospective correction strategies usually cope with motion by fast imaging sequences with integrated motion tracking under free-movement conditions. These acquisitions perform sub-Nyquist sampling and retrospectively bin the data into the respective motion states, yielding subsampled and motion-resolved k-space data. The motion-resolved k-spaces are linked to each other by non-rigid deformation fields. The accurate estimation of such motion is thus an important task in the successful correction of respiratory and cardiac motion. Usually this problem is formulated in image space via diffusion, parametric-spline or optical flow methods. Image-based registration can be however impaired by aliasing artifacts or by estimation from low-resolution images. Subsequently, any motion-corrected reconstruction can be biased by errors in the deformation fields. In this work, we propose a novel deep-learning based motion-corrected 4D (3D spatial + time) image reconstruction which combines a non-rigid registration network and a(3+1)D reconstruction network. Non-rigid motion is estimated directly in k-space based on an optical flow idea and incorporated into the reconstruction network. The proposed method is evaluated on in-vivo 4D motion-resolved magnetic resonance images of patients with suspected liver or lung metastases and healthy subjects.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+      <span class="award badge"><img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20">Best Paper Award<img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"></span>
+    
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Kustner2022" class="col-sm-10">
+    
+      <div class="title">Self-Supervised Motion-Corrected Image Reconstruction Network for 4D Magnetic Resonance Imaging of the Body Trunk</div>
+      <div class="author">
+<a href="http://www.midaslab.org/" target="_blank" rel="noopener noreferrer">T. Küstner</a>, J. Pan, 
+                  <em>C. Gilliam</em>, H. Qi, G. Cruz, K. Hammernik, <a href="https://www.ee.cuhk.edu.hk/~tblu/monsite/phps/" target="_blank" rel="noopener noreferrer">T. Blu</a>, D. Rueckert, R Botnar, C. Prieto, and S. Gatidis
+      </div>
+
+      <div class="periodical">
+      
+        <em>APSIPA Transactions on Signal and Information Processing</em>,
+      
+      
+        Vol. 11,
+      
+      
+        No. 1,
+      
+      
+      
+      
+        2022
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.1561/116.00000039" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/APSIPA_Trans2022.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Respiratory motion can cause artifacts in magnetic resonance imaging of the body trunk if patients cannot hold their breath or triggered acquisitions are not practical. Retrospective correction strategies usually cope with motion by fast imaging sequences under free-movement conditions followed by motion binning based on motion traces. These acquisitions yield sub-Nyquist sampled and motion-resolved k-space data. Motion states are linked to each other by non-rigid deformation fields. Usually, motion registration is formulated in image space which can however be impaired by aliasing artifacts or by estimation from low-resolution images. Subsequently, any motion-corrected reconstruction can be biased by errors in the deformation fields. In this work, we propose a deep-learning based motion-corrected 4D (3D spatial + time) image reconstruction which combines a non-rigid registration network and a 4D reconstruction network. Non-rigid motion is estimated in k-space and incorporated into the reconstruction network. The proposed method is evaluated on in-vivo 4D motion-resolved magnetic resonance images of patients with suspected liver or lung metastases and healthy subjects. The proposed approach provides 4D motion-corrected images and deformation fields. It enables a ∼14× accelerated acquisition with a 25-fold faster reconstruction than comparable approaches under consistent preservation of image quality for changing patients and motion patterns.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+<div class="row">
+  <div id="Gilliam2018d" class="col-sm-10">
+    
+      <div class="title">Estimating Muscle Fibre Conduction Velocity in the Presence of Array Misalignment</div>
+      <div class="author">
+                  <em>Christopher Gilliam</em>, and <a href="https://beteje.github.io/" target="_blank" rel="noopener noreferrer">Beth Jelfs</a>
+                  
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA 2018)</em>, Honolulu, Hawaii, USA,
+      
+      
+      
+      
+      
+        nov
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
+    
+    
+      <a href="http://dx.doi.org/10.23919/apsipa.2018.8659741" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">doi</a>
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/APSIPA2018.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+      
+      <a href="/assets/pdf/APSIPA2018_Slides.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+      
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Surface electromyography (sEMG) has the potential to provide valuable information regarding the status and health of a muscle. In particular, recent developments in high density sEMG (HD-sEMG), which allow simultaneous recordings from a greater number of electrodes, enable the calculation of muscle attributes such as the conduction velocity of motor unit action potentials. However, as with  standard recording montages, HD-sEMG requires careful placement of the electrodes to align with the direction of the muscle fibres, thus limiting practical applications. In this paper we demonstrate an algorithm for calculating muscle fibre conduction velocity which is independent of the alignment of the array. The algorithm automatically corrects for the misalignment of the array whilst estimating the conduction velocity using common local all-pass (CLAP) filters. Specifically, the misalignment is modelled as a rotation of the array relative to the fibre and this rotation is estimated by iteratively fitting the model to the output of the CLAP filters. We validate the proposed algorithm on simulated HD-sEMG data generated from a realistic biological model, demonstrating that the algorithm obtains an accurate estimate of the conduction velocity even when the array is misaligned.</p>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-2 abbr">
+  </div>
+</div>
+</li>
+</ol>
+</div>
+
+    </article>
+
+  </div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2023 Christopher  Gilliam. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+  </body>
+</html>
